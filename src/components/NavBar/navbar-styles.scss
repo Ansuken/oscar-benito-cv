@@ -1,0 +1,13 @@
+.navbar {
+    background-color: var(--section-dark-background);
+    border-bottom: 1px solid var(--primary-color);
+    .nav-link {
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--text-color-invert);
+        transition: .4s;
+        &:hover {
+            color: var(--secondary-color)
+        }
+    }
+}

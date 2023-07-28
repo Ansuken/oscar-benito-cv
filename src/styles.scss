@@ -1,0 +1,130 @@
+:root {
+    --primary-color: #b5179e;
+    --primary-color-hover: #79186a;
+    --secondary-color: #4cc9f0;
+    --main-color: #4361ee;
+    --text-color: #2B2B2B;
+    --text-color-invert: #FFFFFF;
+
+    --gradient-color-start: var(--secondary-color);
+    --gradient-color-end: var(--primary-color);
+
+    --font-family: 'Poppins', sans-serif;
+    --font-weight: 400;
+
+    --section-dark-background: #0a0101;
+    --section-light-background: #F9F9F9;
+    --section-color-background: var(--primary-color);
+
+    --card-bg: rgba(10,0,0,0.9);
+    --card-font-color: #FFFFFF;
+}
+
+[data-theme="secondary"] {
+    --primary-color: #F8D157;
+    --primary-color-hover: #ab744e;
+    --secondary-color: #04B4BA;
+    --main-color: #ddc271;
+
+    --gradient-color-start: var(--primary-color);
+    --gradient-color-end: #E33E35;
+}
+
+body {
+    background: transparent;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    letter-spacing: -0.5px;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+.bg-ob-primary {
+    background-color: var(--primary-color);
+}
+
+.bg-ob-secondary {
+    background-color: var(--secondary-color);
+}
+
+h1 {
+    font-size: 90px;
+    line-height: 0.9em;
+    letter-spacing: -4.5px;
+    font-weight: 700;
+    margin: .5rem;
+}
+
+h2 {
+    font-size: 52px;
+    line-height: 0.9em;
+    letter-spacing: -2.5px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 0.9em;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+
+.ob-text-primary {
+    color: #b5179e;
+}
+
+.ob-gradient-background {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-color: transparent;
+    background-image: linear-gradient(90deg, var(--gradient-color-start ) 36%, var(--gradient-color-end ) 63%);
+}
+
+.w-100 {
+    font-weight: 100;
+}
+.w-200 {
+    font-weight: 200;
+}
+.w-300 {
+    font-weight: 300;
+}
+.w-700 {
+    font-weight: 700;
+}
+.w-900 {
+    font-weight: 900;
+}
+
+
+
+.card-box {
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.skills-badges {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.light-section {
+    background-color: var(--section-light-background);
+}
+.dark-section {
+    background-color: var(--section-dark-background);
+}
+
+.badge {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.project-img {
+    width: 100%;
+    margin-bottom: 15px;
+}

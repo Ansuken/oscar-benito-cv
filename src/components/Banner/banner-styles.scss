@@ -1,0 +1,22 @@
+.banner {
+    padding: 100px 50px;
+    text-align: center;
+    background-color: var(--section-dark-background);
+    color: var(--text-color-invert);
+
+    .name-title{
+        color: var(--primary-color );
+        font-weight: 700;
+    }
+
+    .subject {
+        font-size: 30px;
+        font-weight: 200;
+        color: var(--secondary-color);
+    }
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+    }
+}
