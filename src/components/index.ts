@@ -24,10 +24,14 @@ export {
 } from "./Projects";
 
 export { 
+    Link,
     SectionBox,
     SectionTitle,
     TechnologiesList,
-    TechnologyBadge
+    TechnologyBadge,
+    CardDescription,
+    CardTitle,
+    CardImage
 } from "./Shared";
 
 export { Skills } from "./Skills";

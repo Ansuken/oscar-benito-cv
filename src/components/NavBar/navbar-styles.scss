@@ -3,11 +3,12 @@
     border-bottom: 1px solid var(--primary-color);
     .nav-link {
         font-weight: 700;
-        font-size: 16px;
+        font-size: 1em;
         color: var(--text-color-invert);
         transition: .4s;
-        &:hover {
-            color: var(--secondary-color)
+        &:hover, &.active {
+            transition: all 0.3s;
+            color: var(--secondary-color);
         }
     }
 }

@@ -1,8 +1,9 @@
 import { NavBarItem } from "..";
+import { MenuItem } from "../../interfaces/MenuItem";
 import './navbar-styles.scss';
 
 interface Props {
-    menuItems: string[]
+    menuItems: MenuItem[]
 }
 
 export const NavBar = ( {menuItems}: Props) => {
@@ -14,7 +15,7 @@ export const NavBar = ( {menuItems}: Props) => {
                     {
                         menuItems.map( item => (
                             <NavBarItem 
-                                key={item}
+                                key={item.path}
                                 item={item}
                             />
                         ))

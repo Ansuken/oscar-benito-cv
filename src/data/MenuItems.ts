@@ -1,5 +1,14 @@
 export const menuItems = [
-    'Sobre mí',
-    'Proyectos',
-    'Contacta'
+    {
+        name: 'Home',
+        path: ''
+    },
+    {
+        name: 'Projects',
+        path: 'projects'
+    },
+    {
+        name: 'About Me',
+        path: 'about-me'
+    }
 ]

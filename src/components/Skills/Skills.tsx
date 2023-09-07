@@ -1,15 +1,20 @@
+import { useEffect } from "react";
 import { SectionTitle, TechnologiesList } from ".."
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { startLoadingSkills } from "../../store/slices/skills/thunks";
 
-interface Props {
-    technologies: string[]
-}
+export const Skills = () => {
+    const { skills } = useAppSelector( state => state.skills );
+    const dispatch = useAppDispatch();
 
-export const Skills = ( {technologies}: Props ) => {
+    useEffect(() => {
+        dispatch( startLoadingSkills() );
+    }, []);
     return (
         <>
             <SectionTitle title="Skills" />
             <div className="skills-badges">
-                <TechnologiesList technologies={technologies} />
+                {skills && <TechnologiesList technologies={skills} />}
             </div>
         </>
     )

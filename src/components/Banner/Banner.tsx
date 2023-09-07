@@ -1,14 +1,38 @@
+import { useEffect } from 'react';
 import { NameTitle, ProfileDescription, ProfileImg } from "..";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { startLoadingMainInfo } from '../../store/slices/mainInfo';
 import './banner-styles.scss';
 
 export const Banner = () => {
+
+    const { mainInfo } = useAppSelector( state => state.mainInfo );
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch( startLoadingMainInfo() );
+    }, []);
+
     return (
-        <div className="banner position-relative p-3 p-md-5">
-            <div className="col-md-5 mx-auto my-3">
-                <ProfileImg src="https://yt3.googleusercontent.com/p5qML_V_6csuGy24gKSy_V_iY7mHJX-ie2PgJAi_UqPxFmvbsGKL4k4H6acGv86ycBA8Yd97fQ=s900-c-k-c0x00ffffff-no-rj" />
-                <NameTitle name="Oscar Benito" subject="Front-end developer"/>
+        mainInfo[0] && 
+        <div className="banner p-3 p-md-5">
+            <div className="col-md-6 mx-auto my-3">
+                <ProfileImg src={mainInfo[0].profileImg} />
+                <NameTitle name={mainInfo[0].name} subject={mainInfo[0].role}/>
                 <hr/>
-                <ProfileDescription description="More than <span class='w-700 ob-text-primary'>10 years</span> and more than <span class='w-700 ob-text-primary'>20 projects</span> of experience developing web apps in both <span class='w-700 ob-text-primary'>React</span> and <span class='w-700 ob-text-primary'>Angular</span> in the latest versions." />
+                <ProfileDescription description={mainInfo[0].description} />
+                <div className="profile-rrss">
+                    {
+                        mainInfo[0].rrss.map((item: any)=>(
+                            <a className="rrss-item invert"
+                                key={item.url}
+                                href={item.url} 
+                                target="_blank">
+                                <i className={item.ico}></i>
+                            </a>
+                        ))
+                    }
+                </div>
             </div>
         </div>
     )

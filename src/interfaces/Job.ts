@@ -5,4 +5,4 @@ export interface Job {
     technologies: string[];
     from: string;
     to: string | null;
-};
+}

@@ -1,7 +1,7 @@
 :root {
     --primary-color: #b5179e;
     --primary-color-hover: #79186a;
-    --secondary-color: #4cc9f0;
+    --secondary-color: #6aaffd;
     --main-color: #4361ee;
     --text-color: #2B2B2B;
     --text-color-invert: #FFFFFF;
@@ -48,30 +48,63 @@ body {
     background-color: var(--secondary-color);
 }
 
+::-moz-selection {
+    color: var(--text-color-invert);
+    background-color: var(--primary-color);
+}
+  
+::selection {
+    color: var(--text-color-invert);
+    background-color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    
+    &.invert {
+        color: var(--text-color-invert);
+        &:hover{
+            color: var(--secondary-color);
+        }
+    }
+    &:hover {
+        color: var(--primary-color-hover);
+    }
+}
+
 h1 {
-    font-size: 90px;
+    font-size: 6em;
     line-height: 0.9em;
-    letter-spacing: -4.5px;
+    letter-spacing: -0.06em;
     font-weight: 700;
-    margin: .5rem;
 }
 
 h2 {
-    font-size: 52px;
+    font-size: 3.5em;
     line-height: 0.9em;
-    letter-spacing: -2.5px;
+    letter-spacing: -0.06em;
     font-weight: 700;
 }
 
 h3 {
-    font-size: 32px;
+    font-size: 2em;
     line-height: 0.9em;
-    letter-spacing: -1px;
+    letter-spacing: -0.06em;
     font-weight: 700;
 }
 
+img {
+    width: 100%;
+}
+
 .ob-text-primary {
-    color: #b5179e;
+    color: var(--primary-color);
+}
+
+.ob-text-secondary {
+    color: var(--secondary-color);
 }
 
 .ob-gradient-background {
@@ -98,12 +131,30 @@ h3 {
     font-weight: 900;
 }
 
-
-
 .card-box {
-    border: 1px solid #d0d0d0;
-    border-radius: 5px;
+    //border: 1px solid #d0d0d0;
+    border-radius: 0.3em;
     background-color: white;
+    -webkit-box-shadow: 0px 13px 27px -18px rgba(0,0,0,0.20);
+    -moz-box-shadow: 0px 13px 27px -18px rgba(0,0,0,0.20);
+    box-shadow: 0px 13px 27px -18px rgba(0, 0, 0, 0.20);
+}
+.project-card {
+    transition: all .2s;
+    &:hover{
+        -webkit-box-shadow: 0px 26px 27px -18px rgba(0,0,0,0.20);
+        -moz-box-shadow: 0px 26px 27px -18px rgba(0,0,0,0.20);
+        box-shadow: 0px 26px 27px -18px rgba(0, 0, 0, 0.20);
+        h3 {
+            transition: all .2s;
+            color: var(--secondary-color)
+        }
+    }
+}
+.project-links {
+    display: flex;
+    justify-content: space-around;
+    min-width: 10em;
 }
 
 .skills-badges {
@@ -113,18 +164,81 @@ h3 {
     justify-content: center;
 }
 .light-section {
-    background-color: var(--section-light-background);
+    background: radial-gradient(circle, rgb(245, 245, 245) 50%, rgb(211, 211, 211) 100%);
 }
 .dark-section {
-    background-color: var(--section-dark-background);
+    background: radial-gradient(circle, rgb(3, 20, 40) 0%, var(--section-dark-background) 100%);
 }
 
 .badge {
-    font-size: 14px;
+    font-size: 0.9em;
     text-transform: uppercase;
+
+    // TO TEST
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    background-color: transparent;
 }
 
 .project-img {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 1em;
+}
+
+.about-wrapper {
+    display: flex;
+    height: 100vh;
+    .about-pic, .about-info {
+        width: 50%;
+    }
+    .about-pic-wrapper {
+        height: 100%;
+        color: var(--text-color-invert);
+        text-align: center;
+        .about-pic-box {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    
+}
+
+.about-more-things {
+    background-color: #fff;
+}
+.hobbies {
+    .hobby {
+        img {
+            height: 20em;
+            object-fit: cover;
+            object-position: center center;
+        }
+    }
+}
+.main-info {
+    display: flex;
+    justify-content: space-between;
+    .profile-info {
+        width: calc(70% - 2em);
+    }
+    img { 
+        width: calc(30% - 2em);
+        border-radius: 1em;
+        object-fit: cover;
+        object-position: center center;
+        -webkit-box-shadow: 0px 26px 27px -18px rgba(0,0,0,0.30);
+        -moz-box-shadow: 0px 26px 27px -18px rgba(0,0,0,0.30);
+        box-shadow: 0px 26px 27px -18px rgba(0, 0, 0, 0.30);
+    }
+    .profile-pic-big {
+        
+    }
+}
+
+.card-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

@@ -1,8 +1,11 @@
 export interface Project {
-    id: number;
+    id?: string;
     name: string;
     description: string;
     technologies: string[];
     img?: string;
+    images?: string[];
     gitUrl?: string;
+    liveUrl?: string;
+    order: number;
 }

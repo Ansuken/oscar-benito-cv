@@ -1,7 +1,15 @@
-export const NavBarItem = ({item}: {item: string}) => {
+import { NavLink } from 'react-router-dom';
+import { MenuItem } from '../../interfaces/MenuItem';
+
+interface Props {
+    item: MenuItem
+}
+export const NavBarItem = ({item}: Props) => {
     return (
         <li className="nav-item">
-            <a className="nav-link" aria-current="page" href={`#${item}`}>{item}</a>
+            <NavLink className="nav-link" to={`/${item.path}`}>
+                {item.name}
+            </NavLink>
         </li>
     )
 }
