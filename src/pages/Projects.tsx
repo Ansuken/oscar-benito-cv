@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { startLoadingProjects } from '../store/slices/projects/thunks';
-import { ProjectCard, ProjectDescription, ProjectTitle, SectionBox, SectionTitle, TechnologiesList } from '../components';
+import { ProjectCard, SectionBox, SectionTitle } from '../components';
 import { Project } from '../interfaces/Project';
 
 export const Projects = () => {

@@ -1,6 +1,5 @@
 import { Project } from "../../interfaces/Project";
 import {
-    Link,
     TechnologiesList,
     CardDescription,
     CardImage, 
@@ -9,7 +8,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { CardFooter } from "../Shared";
 
-export const ProjectCard = ({id, img, name, description, technologies, gitUrl, liveUrl, images}: Project) => {
+export const ProjectCard = ({id, name, description, technologies, gitUrl, liveUrl, images}: Project) => {
 
     const navigate = useNavigate();
     const onNavigate = () => {
