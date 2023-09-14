@@ -17,7 +17,7 @@ export const Projects = ( ) => {
             <div className="row">
                 {
                     projects && projects.map( (project: Project) => (
-                        <ProjectCard key={project.id} {...project} />
+                        project.published && <ProjectCard key={project.id} {...project} />
                     ))
                 }
             </div>
