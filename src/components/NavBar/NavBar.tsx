@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { NavBarItem } from "..";
 import { MenuItem } from "../../interfaces/MenuItem";
 import './navbar-styles.scss';
@@ -18,15 +19,18 @@ export const NavBar = ( {menuItems}: Props) => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mx-auto">
-                        {
-                            menuItems.map( item => (
-                                <NavBarItem 
-                                    key={item.path}
-                                    item={item}
-                                />
-                            ))
-                        }
-                    </ul>
+                    {
+                        menuItems.map( item => (
+                            <NavBarItem 
+                                key={item.path}
+                                item={item}
+                            />
+                        ))
+                    }
+                    <a className="nav-link" href="../Oscar_Benito Sánchez_CV.pdf" download target="_self">
+                        Download CV
+                    </a>
+                </ul>
                 </div>
                     
             </div>
