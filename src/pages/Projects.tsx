@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { startLoadingProjects } from '../store/slices/projects/thunks';
-import { ProjectCard, SectionBox, SectionTitle } from '../components';
+import { ProjectCard, SectionBox, SectionTitle, Spinner } from '../components';
 import { Project } from '../interfaces/Project';
 
 export const Projects = () => {
@@ -11,10 +11,11 @@ export const Projects = () => {
     useEffect(() => {
         dispatch( startLoadingProjects() );
     }, []);
+
     return (
         <>
             {
-                projects &&
+                projects ?
                 <SectionBox style="light-section">
                     <SectionTitle title="Projects" />
                     <div className="row">
@@ -25,6 +26,7 @@ export const Projects = () => {
                         }
                     </div>
                 </SectionBox>
+                : <Spinner />
             }
         </>
     )

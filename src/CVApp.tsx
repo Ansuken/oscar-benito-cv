@@ -5,7 +5,7 @@ import { AppRouter } from "./router/AppRouter";
 export const CVApp = () => {
     return (
         <>
-            <NavBar menuItems={ menuItems } />
+            { import.meta.env.VITE_APPSTATUS !== 'development' ? <NavBar menuItems={ menuItems } /> : null }
             <AppRouter/>
         </>
     )

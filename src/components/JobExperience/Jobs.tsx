@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { SectionTitle, JobCard } from '..'
+import { SectionTitle, JobCard, Spinner } from '..'
 import { startLoadingJobExperience } from '../../store/slices/jobExperience/thunks';
 import { useAppSelector, useAppDispatch } from '../../hooks'
 import { Job } from '../../interfaces/Job';
@@ -25,7 +25,7 @@ export const Jobs = () => {
     return (
         <>
             <SectionTitle title='Job Experience' />
-            { jobExperience && itemsRender() }
+            { jobExperience ? itemsRender() : <Spinner />}
         </>
     )
 }

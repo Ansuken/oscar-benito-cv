@@ -35,3 +35,5 @@ export {
 } from "./Shared";
 
 export { Skills } from "./Skills";
+
+export { Spinner } from "./Spinner";

@@ -11,4 +11,13 @@
             color: var(--secondary-color);
         }
     }
+    .navbar-toggler {
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+    }
+}
+
+.material-symbols-outlined {
+    color: white;
 }

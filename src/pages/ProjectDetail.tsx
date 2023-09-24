@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { startLoadingProjectById } from "../store/slices/projects/thunks";
 import { useParams } from "react-router-dom";
-import { ProjectDescription, SectionBox, SectionTitle, TechnologiesList } from "../components";
+import { ProjectDescription, SectionBox, SectionTitle, Spinner, TechnologiesList } from "../components";
 import { CardFooter } from "../components/Shared";
 
 export const ProjectDetail = () => {
@@ -15,26 +15,22 @@ export const ProjectDetail = () => {
             dispatch( startLoadingProjectById(id) );
         }
     }, []);
+    
     return (
         <>
             {
-                project &&
+                project ?
                 <SectionBox style="light-section">
                     <SectionTitle title={project.name} />
                     <div className="card-box p-3 mb-3" key={project.id}>
-                        <div className="card-box-header">
-                            <div>
-                                <TechnologiesList technologies={project.technologies} />
-                            </div>
-                            
-                            {
-                                (project.gitUrl || project.liveUrl) &&
-                                <>
-                                    <hr/>
-                                    <CardFooter gitUrl={project.gitUrl} liveUrl={project.liveUrl} />
-                                </>
-                            }
-                        </div>
+                        <TechnologiesList technologies={project.technologies} />
+                        <hr/>
+                        {
+                            (project.gitUrl || project.liveUrl) &&
+                            <>
+                                <CardFooter gitUrl={project.gitUrl} liveUrl={project.liveUrl} />
+                            </>
+                        }
                         <hr/>
                         <div className="project-info-description">
                             <ProjectDescription description={project.description} />
@@ -58,6 +54,7 @@ export const ProjectDetail = () => {
                         </div>
                     </div>
                 </SectionBox>
+                : <Spinner />
             }
         </>
     )

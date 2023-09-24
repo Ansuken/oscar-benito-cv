@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { startLoadingMainInfo } from "../store/slices/mainInfo";
-import { Banner, CardDescription, CardImage, CardTitle, Link, SectionBox, SectionTitle } from '../components';
+import { Banner, CardDescription, CardImage, CardTitle, Link, SectionBox, SectionTitle, Spinner } from '../components';
 import { startLoadingAbout } from '../store/slices/about/thunks';
 import { About } from '../interfaces/About';
 
@@ -9,16 +9,17 @@ export const AboutMe = () => {
     const { mainInfo } = useAppSelector( state => state.mainInfo );
     const { about } = useAppSelector( state => state.about );
     const dispatch = useAppDispatch();
-    
+
     useEffect(() => {
         dispatch( startLoadingMainInfo() );
         dispatch( startLoadingAbout() );
     }, []);
+
     return (
         
         <>
             {
-                mainInfo[0] &&
+                mainInfo[0] ?
                 <SectionBox style="light-section">
                     <SectionTitle title="About Me" />
                     <Banner />
@@ -51,6 +52,7 @@ export const AboutMe = () => {
                         }
                     </div>
                 </SectionBox>
+                : <Spinner />
             }
         </>
     )
