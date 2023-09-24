@@ -8,4 +8,5 @@ export interface Project {
     gitUrl?: string;
     liveUrl?: string;
     order: number;
+    published: boolean;
 }
