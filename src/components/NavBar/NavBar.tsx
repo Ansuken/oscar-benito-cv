@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { NavBarItem } from "..";
 import { MenuItem } from "../../interfaces/MenuItem";
 import './navbar-styles.scss';
@@ -21,7 +20,7 @@ export const NavBar = ( {menuItems}: Props) => {
                 <ul className="navbar-nav mx-auto">
                     {
                         menuItems.map( item => (
-                            <NavBarItem 
+                            <NavBarItem
                                 key={item.path}
                                 item={item}
                             />
@@ -32,7 +31,7 @@ export const NavBar = ( {menuItems}: Props) => {
                     </a>
                 </ul>
                 </div>
-                    
+
             </div>
         </nav>
     )
